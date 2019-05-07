@@ -1,0 +1,7 @@
+name: PowerfoolManager
+version: 1.2.0
+main: br.com.pixelmonbrasil.powerfool.manager.Powerfool
+author: Teits_
+depend:
+  - AuthMe
+  - DFS
