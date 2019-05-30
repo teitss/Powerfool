@@ -1,0 +1,28 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+    id 'com.github.johnrengelman.shadow'
+}
+
+group 'br.com.pixelmonbrasil'
+version '1.2.0'
+setArchivesBaseName("Powerfool-Node")
+
+repositories {
+    mavenCentral()
+    maven { url = "https://repo.spongepowered.org/maven" }
+}
+
+shadowJar {
+    configurations = [project.configurations.shadow]
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile 'org.spongepowered:spongeapi:7.1.0-SNAPSHOT'
+    compile 'me.lucko.luckperms:luckperms-api:4.4'
+    shadow 'com.rabbitmq:amqp-client:5.6.0'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
