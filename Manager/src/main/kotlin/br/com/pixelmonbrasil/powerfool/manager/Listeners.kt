@@ -149,12 +149,10 @@ object Listeners : Listener {
             return
         }
 
-        if (server.onlyVips) {
-            if (Powerfool.INSTANCE.getAllVips().contains(player.uniqueId)) {
-                (player as Player).sendTitle("§aVocê tem §ePasse VIP", "§aTenha um bom jogo!", 10, 50, 10)
-                player.playSound(player.location, Sound.BLOCK_NOTE_PLING, 1F, 1F)
-                sendPlayerToServer(player, server)
-            }
+        if (server.onlyVips && Powerfool.INSTANCE.getAllVips().contains(player.uniqueId)) {
+            (player as Player).sendTitle("§aVocê tem §ePasse VIP", "§aTenha um bom jogo!", 10, 50, 10)
+            player.playSound(player.location, Sound.BLOCK_NOTE_PLING, 1F, 1F)
+            sendPlayerToServer(player, server)
             return
         }
 
